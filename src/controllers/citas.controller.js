@@ -10,7 +10,7 @@ export const infromesGuardar = async function (req, res) {
     idCita,
   ]);
 
-  await pool.query("INSERT INTO  tablaInformes (infrome) VALUES(?)", [pdfData]);
+  await pool.query("INSERT INTO  tablainformes (infrome) VALUES(?)", [pdfData]);
   res.send("exitoso");
 };
 
