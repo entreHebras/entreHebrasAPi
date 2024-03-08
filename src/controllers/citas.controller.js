@@ -352,7 +352,9 @@ export const recuperarContrasenia = async function (req, res) {
 };
 
 export const empleados = async function (req, res) {
-  const [empleados] = await pool.query("select * from empleados EmpleadoID>6 ");
+  const [empleados] = await pool.query(
+    "select * from empleados where EmpleadoID>6 "
+  );
   res.send(empleados);
 };
 
