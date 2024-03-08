@@ -352,7 +352,7 @@ export const recuperarContrasenia = async function (req, res) {
 };
 
 export const empleados = async function (req, res) {
-  const [empleados] = await pool.query("select * from empleados");
+  const [empleados] = await pool.query("select * from empleados EmpleadoID>6 ");
   res.send(empleados);
 };
 
@@ -371,7 +371,7 @@ export const eliminarEmpleados = async function (req, res) {
   await pool.execute("DELETE FROM login WHERE empleado_id = ?", [EmpleadoID]);
 
   await pool.execute(
-    "UPDATE tablacitas SET tablacitas.EmpleadoID=1 WHERE tablacitas.EmpleadoID = ?",
+    "UPDATE tablacitas SET tablacitas.EmpleadoID=6 WHERE tablacitas.EmpleadoID = ?",
     [EmpleadoID]
   );
 
